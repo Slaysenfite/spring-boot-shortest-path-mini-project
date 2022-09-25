@@ -1,0 +1,42 @@
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+    <SOAP-ENV:Header/>
+    <SOAP-ENV:Body>
+        <ns2:getShortestPathResponse xmlns:ns2="http://slaysenfite-shortest-path-service/generated-sources">
+            <ns2:shortestPathResult>
+                <ns2:shortestPath>
+                    <ns2:planet>
+                        <ns2:node>I</ns2:node>
+                        <ns2:name>Neptune</ns2:name>
+                    </ns2:planet>
+                </ns2:shortestPath>
+                <ns2:shortestPath>
+                    <ns2:planet>
+                        <ns2:node>Z</ns2:node>
+                        <ns2:name>Gliese 436</ns2:name>
+                    </ns2:planet>
+                </ns2:shortestPath>
+                <ns2:shortestPath>
+                    <ns2:planet>
+                        <ns2:node>Y</ns2:node>
+                        <ns2:name>Gliese 176</ns2:name>
+                    </ns2:planet>
+                </ns2:shortestPath>
+                <ns2:shortestPath>
+                    <ns2:planet>
+                        <ns2:node>A'</ns2:node>
+                        <ns2:name>Pollux</ns2:name>
+                    </ns2:planet>
+                </ns2:shortestPath>
+                <ns2:costBetweenVertices>
+                    <ns2:cost>51.689</ns2:cost>
+                </ns2:costBetweenVertices>
+                <ns2:costBetweenVertices>
+                    <ns2:cost>60.512</ns2:cost>
+                </ns2:costBetweenVertices>
+                <ns2:costBetweenVertices>
+                    <ns2:cost>331.84</ns2:cost>
+                </ns2:costBetweenVertices>
+            </ns2:shortestPathResult>
+        </ns2:getShortestPathResponse>
+    </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

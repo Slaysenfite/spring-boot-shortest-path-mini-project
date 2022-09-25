@@ -1,0 +1,30 @@
+<div class="card my-5">
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()" #userForm="ngForm">
+
+      <label>Origin Planet</label>
+      <div class="form-group">
+        <select [(ngModel)]="origin"
+                name="Origin Planet Name"
+                class="select-css">
+          <option *ngFor="let c of planets" [value]="c.name">
+            {{c.name}}
+          </option>
+        </select>
+      </div>
+
+      <label>Destination Planet</label>
+      <div class="form-group">
+        <select [(ngModel)]="destination"
+                name="Destination Planet Name"
+                class="select-css">
+          <option *ngFor="let c of planets" [value]="c.name">
+            {{c.name}}
+          </option>
+        </select>
+      </div>
+
+      <button type="submit" class="btn btn-info">Submit</button>
+    </form>
+  </div>
+</div>

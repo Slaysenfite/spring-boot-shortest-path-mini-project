@@ -1,0 +1,46 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://slaysenfite-shortest-path-service/generated-sources"
+           targetNamespace="http://slaysenfite-shortest-path-service/generated-sources" elementFormDefault="qualified">
+
+    <xs:element name="getShortestPathRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="originPlanetName" type="xs:string"/>
+                <xs:element name="destinationPlanetName" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getShortestPathResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="shortestPathResult" type="tns:Result_Dto"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="Result_Dto">
+        <xs:sequence>
+            <xs:element name="shortestPath" type="tns:Vertex_Dto" maxOccurs="unbounded" minOccurs="0"/>
+            <xs:element name="costBetweenVertices" type="tns:BigDecimal_Dto" maxOccurs="unbounded" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="Vertex_Dto">
+        <xs:sequence>
+            <xs:element name="planet" type="tns:Planet_Dto"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="Planet_Dto">
+        <xs:sequence>
+            <xs:element name="node" type="xs:string"/>
+            <xs:element name="name" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="BigDecimal_Dto">
+        <xs:sequence>
+            <xs:element name="cost" type="xs:float"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

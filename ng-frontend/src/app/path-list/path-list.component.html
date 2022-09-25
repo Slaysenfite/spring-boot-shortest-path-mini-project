@@ -1,0 +1,30 @@
+<div class="card my-5">
+  <div class="card-body">
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+      <tr>
+        <th scope="col">Node</th>
+        <th scope="col">Name</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let vertex of result.shortestPath">
+        <td>{{ vertex.planet.node }}</td>
+        <td>{{ vertex.planet.name }}</td>
+      </tr>
+      </tbody>
+    </table>
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+      <tr>
+        <th scope="col">Cost between vertices</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let cost of result.costBetweenVertices">
+        <td>{{ cost }}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

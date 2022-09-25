@@ -1,0 +1,67 @@
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sch="http://slaysenfite-shortest-path-service/generated-sources" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://slaysenfite-shortest-path-service/generated-sources" targetNamespace="http://slaysenfite-shortest-path-service/generated-sources">
+    <wsdl:types>
+        <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://slaysenfite-shortest-path-service/generated-sources">
+            <xs:element name="getShortestPathRequest">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="originPlanetName" type="xs:string"/>
+                        <xs:element name="destinationPlanetName" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getShortestPathResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="shortestPathResult" type="tns:Result_Dto"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:complexType name="Result_Dto">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="shortestPath" type="tns:Vertex_Dto"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="costs" type="xs:float"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="Vertex_Dto">
+                <xs:sequence>
+                    <xs:element name="planet" type="tns:Planet_Dto"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="Planet_Dto">
+                <xs:sequence>
+                    <xs:element name="node" type="xs:string"/>
+                    <xs:element name="name" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="getShortestPathResponse">
+        <wsdl:part element="tns:getShortestPathResponse" name="getShortestPathResponse"> </wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="getShortestPathRequest">
+        <wsdl:part element="tns:getShortestPathRequest" name="getShortestPathRequest"> </wsdl:part>
+    </wsdl:message>
+    <wsdl:portType name="shortestPathPort">
+        <wsdl:operation name="getShortestPath">
+            <wsdl:input message="tns:getShortestPathRequest" name="getShortestPathRequest"> </wsdl:input>
+            <wsdl:output message="tns:getShortestPathResponse" name="getShortestPathResponse"> </wsdl:output>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="shortestPathPortSoap11" type="tns:shortestPathPort">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="getShortestPath">
+            <soap:operation soapAction=""/>
+            <wsdl:input name="getShortestPathRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="getShortestPathResponse">
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="shortestPathPortService">
+        <wsdl:port binding="tns:shortestPathPortSoap11" name="shortestPathPortSoap11">
+            <soap:address location="http://localhost:8080/ws"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>
