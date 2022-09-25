@@ -13,7 +13,7 @@ Alternatively, there is an angular frontend that consumes a rest services for th
 6. cd into shortest-path-ui
 7. mvn spring-boot:run or run ShortestPathClientUI.java from dashboard
 
-### Using the REST consuming fornt end
+### Using the REST consuming front end
 6. cd into ng-frontend
 7. ng serve or run Angular cli server from dashboard
 

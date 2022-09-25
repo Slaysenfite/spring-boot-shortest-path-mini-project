@@ -20,7 +20,7 @@
         <jacoco.version>0.8.2</jacoco.version>
         <maven.surefire.plugin.version>2.22.2</maven.surefire.plugin.version>
         <sonar.host.version>3.4.0.905</sonar.host.version>
-        <mapstruct-jdk8.version>1.3.0.Final</mapstruct-jdk8.version>
+        <mapstruct.version>1.5.2.Final</mapstruct.version>
         <javax.persistence-api.version>2.2</javax.persistence-api.version>
         <spring-data-commons.version>2.1.6.RELEASE</spring-data-commons.version>
         <derby.version>10.14.2.0</derby.version>
@@ -69,8 +69,8 @@
         </dependency>
         <dependency>
             <groupId>org.mapstruct</groupId>
-            <artifactId>mapstruct-jdk8</artifactId>
-            <version>${mapstruct-jdk8.version}</version>
+            <artifactId>mapstruct</artifactId>
+            <version>${mapstruct.version}</version>
         </dependency>
 
     </dependencies>

@@ -17,7 +17,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 class XlsxReaderTest {
 
     private static final String FILEPATH = "data/HR-Offsite-AssignmentV30.xlsx";
-    private static final String FILEPATH_INCORRECT_TYPE = "dummmy/incorrect-type.csv";
+    private static final String FILEPATH_INCORRECT_TYPE = "dummy-data/incorrect-type.csv";
 
     @Test
     void Given_XlsxDataFile_When_DataIsRequiredFromTheFile_Then_FileIsNotNull() throws IOException {
